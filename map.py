@@ -15,11 +15,11 @@ def init_routes(bp):
                 locations_list.append({
                     'id': location['id'],
                     'name': location['name'],
-                    'latitude': float(location['latitude']),
-                    'longitude': float(location['longitude']),
-                    'description': location['description'],
-                    'image': location['image'],
-                    'longDes': location['longDes'],
+                    'latitude': float(location['latitude',0]),
+                    'longitude': float(location['longitude',0]),
+                    'description': location['description',''],
+                    'image': location['image',''],
+                    'longDes': location['longDes',''],
                 })
 
             print("Returning locations:", locations_list)  # Debugging output

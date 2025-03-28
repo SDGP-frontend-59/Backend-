@@ -17,7 +17,16 @@ def create_app(config_class=Config):
     app.config.from_object(config_class)
 
     # Enable CORS for all routes
+    # change the resource to front end deployed link
+    # CORS(app, origins=["https://your-frontend-domain.com"])
     CORS(app, resources={r"/*": {"origins": "*"}})
+    #  CORS(app, resources={
+    # r"/*": {
+    #     "origins": ["https://ceylonminefront.netlify.app", "http://localhost:3000"],
+    #     "methods": ["GET" , "POST"],
+    #     "allow_headers": ["Content-Type", "Authorization"]
+    #     }
+    # })
 
     # Initialize Supabase client
     load_dotenv()  # Load environment variables from .env file
@@ -42,7 +51,7 @@ def create_app(config_class=Config):
     contact.init_routes(contact_bp)
     minerpage.init_routes(minerpage_bp)
     unlicensedminer.init_routes(unlicensedminer_bp)
-    authentication.init_routes(auth_bp)
+    # authentication.init_routes(auth_bp)
 
     # Register blueprints with the app
     app.register_blueprint(complaints_bp)

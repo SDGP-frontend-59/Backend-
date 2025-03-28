@@ -312,7 +312,6 @@ def init_routes(bp):
 #     # bp.route("/test-insert", methods=['GET'])(test_insert)
 
 
-
 # from flask import Blueprint, jsonify, request, make_response
 # from supabase import create_client
 # from datetime import datetime, timedelta
